@@ -81,17 +81,22 @@ Simulation: NVIDIA Isaac Sim 4.0+ (Requires RTX GPU)
 
 Hardware: NVIDIA GPU (RTX 3080/4070 or higher recommended)
 
-📂 Project Structure
-Plaintext
+## 📂 Project Structure
 
+```text
 neuro-nav/
 ├── neuro_nav_sim/           # Isaac Sim 场景加载脚本与 USD 资产配置
-├── neuro_nav_bringup/       # 系统级 Launch 文件 (一键启动)
+│   ├── launch/              # 启动文件
+│   └── scripts/             # Python 启动脚本
+├── neuro_nav_bringup/       # 系统级 Launch 文件 (一键启动 Sim + Nav2)
 ├── neuro_nav_interfaces/    # 自定义 ROS 消息 (SemanticMap, GoalDescription)
 ├── neuro_nav_brain/         # (WIP) VLM 与 LLM 节点的存放处
 └── README.md
+```
 🗺️ Roadmap
+
 Phase 1: The Foundation (Current v1.0)
+
 [x] 初始化项目仓库与依赖管理。
 
 [ ] 搭建 Isaac Sim 室内仿真场景（Office/Home）。
