@@ -27,29 +27,27 @@ v1.0 版本的核心目标是**搭建稳健的仿真基座**，打通 Isaac Sim 
 
 v1.0 版本的核心目标是**搭建稳健的仿真基座**，打通 Isaac Sim 到 ROS 2 的数据闭环，并为后续的 VLM (Vision-Language Model) 和 RL (Reinforcement Learning) 模块预留标准接口。
 
-```mermaid
 graph TD
-    subgraph "Isaac Sim (Physical World)"
-        SimRobot[Robot: Carter V2]
-        SimSensors[Lidar + RGB-D + IMU]
-        SimScene[Home/Office Environment]
+    subgraph Physical_World ["Isaac Sim (Physical World)"]
+        SimRobot["Robot: Carter V2"]
+        SimSensors["Lidar + RGB-D + IMU"]
+        SimScene["Home/Office Environment"]
     end
 
-    subgraph "ROS 2 Middleware (Bridge)"
-        ActionGraph[Isaac ROS Bridge]
+    subgraph ROS2_Bridge ["ROS 2 Middleware (Bridge)"]
+        ActionGraph["Isaac ROS Bridge"]
     end
 
-    subgraph "The Cerebellum (Geometric Layer)"
-        style L1 fill:#e1f5fe,stroke:#01579b
-        SLAM[SLAM Toolbox]
-        Nav2[Nav2 Stack (Planner/Controller)]
-        Odom[Odometry]
+    subgraph Geometric_Layer ["The Cerebellum (Geometric Layer)"]
+        SLAM["SLAM Toolbox"]
+        Nav2["Nav2 Stack (Planner/Controller)"]
+        Odom["Odometry"]
     end
 
-    subgraph "The Brain (Semantic Layer - Interfaces Ready)"
-        style L2 fill:#fff3e0,stroke:#e65100,stroke-dasharray: 5 5
-        VLM_Node[VLM Perception Node (Placeholder)]
-        Sem_Map[Semantic Map Interface]
+    subgraph Semantic_Layer ["The Brain (Semantic Layer - Interfaces Ready)"]
+        style Semantic_Layer stroke-dasharray: 5 5
+        VLM_Node["VLM Perception Node (Placeholder)"]
+        Sem_Map["Semantic Map Interface"]
     end
 
     %% Data Flow
