@@ -72,7 +72,7 @@ graph TD
     VLA_Model -->|1. 'Go grasp the cup'| SDK
     SDK -->|2. Semantic Goal| Semantic_Engine
     Semantic_Engine -->|3. Object Location| Stance_Gen
-    Stance_Gen -->|4. Optimal Base Pose (x,y,θ)| Nav_Stack
+    Stance_Gen -->|4. Optimal Base Pose x,y,theta| Nav_Stack
     Nav_Stack -->|5. cmd_vel| Isaac
     Isaac -->|6. Odom & Sensor Data| Nav_Stack
 ```
